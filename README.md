@@ -39,6 +39,9 @@ int yywrap() {
 #include <stdio.h>
 #include <stdlib.h>
 int count = 0;  // to count number of a's
+
+int yylex(void);           
+void yyerror(const char *msg); 
 %}
 
 %token A B
@@ -69,7 +72,6 @@ int main() {
 void yyerror(const char *msg) {
     printf("Syntax error: %s\n", msg);
 }
-
 ```
 
 
